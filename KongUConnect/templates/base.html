@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <div style="background-color: #346U; height: 50px;"></div>
+    <div style="position: fixed; top: 50px; right: 0;">
+        <button style="margin-right: 10px;">Log in</button>
+        <button>About Us</button>
+    </div>
+    {% block content %}{% endblock %}
+</body>
+</html>
