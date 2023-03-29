@@ -1,3 +1,4 @@
+import os
 """
 Django settings for KongUConnect project.
 
@@ -14,6 +15,7 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+MASTER_BASE_DIR = Path(__file__).resolve().parent.parent.parent.parent
 
 
 # Quick-start development settings - unsuitable for production
@@ -55,9 +57,11 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'KongUConnect.urls'
 
 TEMPLATES = [
-    {
+    { 
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(MASTER_BASE_DIR, '../../templates/project_base.html')
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
