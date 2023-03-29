@@ -4,17 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}{% endblock %}</title>
-    {%block css%}  {% endblock %}
+    <link rel='stylesheet' href="{% static 'css/styles.css' %}">
 </head>
 <body>
-    <div style="background-color: #346U; height: 50px;"></div>
-    <div style="position: fixed; top: 50px; right: 0;">
-        {%block topbar-button%}{%endblock%}
+    <div class='top-bar'>
+        <div class='top-bar left-align'>
+            {% block topbar-button %}{% endblock %}
+        </div>
+        <div class='top-bar right-align'>
+            <a href="#"><button class='top-bar button btn'>Log In</button></a>
+            <a href="#"><button class='top-bar button btn'>About Us</button></a>
+        </div>
     </div>
-    <div style="position: fixed; top: 50px; right: 0;">
-       <a href="#"> <button style="margin-right: 10px;">Log in</button></a>
-       <a href="#"> <button>About Us<button></a>
+    <div class='content' style="margin-top: 50px">
+    {%block content%}{%endblock%}
     </div>
-    {% block content %}{% endblock %}
 </body>
-</html> 
+</html>
